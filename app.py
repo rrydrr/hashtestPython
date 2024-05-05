@@ -12,7 +12,15 @@ def store_in_array(string):
 hash_array = []
 
 # Example usage
-input_string = "Hello, World!"
+scanned = input()
+input_string = scanned
 store_in_array(input_string)
 
 print(hash_array)
+
+print("Try to verify using the same input")
+
+if convert_to_sha256(scanned) == hash_array[0]:
+    print("verfied")
+else:
+    print("not verified")
