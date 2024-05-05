@@ -28,7 +28,7 @@ while True:
 
 # Converting array of strings to SHA-256 hashes
 
-for i in range(string_array):
+for i in range(len(string_array)):
     hash_array.append(convert_to_sha256(string_array[i]))
     
 # Testing the stored SHA-256 using regular string
@@ -37,8 +37,9 @@ while True:
     print("Input string to check if string exists in hash array ('end' will end this process): ", end="")
     scanned = input()
     if scanned != "end":
-        for i in range(hash_array):
-            if scanned == hash_array[i]:
+        found = False
+        for i in range(len(hash_array)):
+            if convert_to_sha256(scanned) == hash_array[i]:
                 print("String found!")
                 found = True
     
